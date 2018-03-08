@@ -3,4 +3,6 @@
 
 echo renaming $1 to $2
 git mv $1 $2
-grep -rl $1 | xargs sed -i "s/$1/$2/g"
+s1=$(echo $1 | sed -i 's/\//\\\//g')
+s2=$(echo $2 | sed -i 's/\//\\\//g')
+grep -rl $1 | xargs sed -i "s/$s1/$s2/g"
