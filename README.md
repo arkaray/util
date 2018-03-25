@@ -5,4 +5,4 @@ grename.sh:
 this script can be used to rename/move files in a git repository
 this script automatically updates the references to the file
 **usage**: ```./grename.sh <old name/path> <new name/path>```
-**DO NOT USE: ./ prefix**
+**DO NOT USE: ./ prefix for filepath**
