@@ -1,8 +1,13 @@
 # This script can be used to rename/move files in a git repository
 # This will also change all references to this files accordingly
 
+usage='./grename.sh <old name/path> <new name/path>'
+[ -z $1 ] && echo $usage
+[ -z $2 ] && echo $usage
+
 [ -f $1 ] || (echo 'source file does not exist' >&2; exit 1)
 [ -f $2 ] && (echo "$2 already exists" >&2; exit 1)
+
 echo renaming $1 to $2
 git mv $1 $2
 s1=$(echo $1 | sed -i 's/\//\\\//g')
